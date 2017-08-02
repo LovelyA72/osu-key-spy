@@ -21,6 +21,10 @@
         }
 
         #region Windows 窗体设计器生成的代码
+        private int last_v67;
+        private int last_v68;
+        private bool init_AB = false;
+        private int counter = 0;
 
         /// <summary>
         /// 设计器支持所需的方法 - 不要修改
@@ -138,7 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "osu! key spy 0.1";
+            this.Text = "osu! key spy 0.2";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
