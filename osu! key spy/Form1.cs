@@ -26,9 +26,12 @@ namespace Your_Name
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            bool hitA = false;
+            bool hitB = false;
             if (GetAsyncKeyState(67) != 0)
             {
                 pictureBox1.BackColor = Color.SkyBlue;
+
             }
             else {
                 pictureBox1.BackColor = Color.White;
