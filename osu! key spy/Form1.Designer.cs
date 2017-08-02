@@ -42,10 +42,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yzACG百科站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.主站ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.何小绫ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -95,7 +104,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 35);
+            this.groupBox1.Location = new System.Drawing.Point(23, 61);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(418, 137);
             this.groupBox1.TabIndex = 5;
@@ -106,18 +115,18 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(137, 192);
+            this.panel1.Location = new System.Drawing.Point(147, 218);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(447, 118);
+            this.panel1.Size = new System.Drawing.Size(604, 118);
             this.panel1.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("DigifaceWide", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightGreen;
-            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(444, 118);
+            this.label4.Size = new System.Drawing.Size(614, 118);
             this.label4.TabIndex = 0;
             this.label4.Text = "0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,30 +134,103 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 224);
+            this.label1.Location = new System.Drawing.Point(32, 218);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 24);
             this.label1.TabIndex = 7;
             this.label1.Text = "计数器";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(36, 271);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 43);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "重置";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.帮助ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(781, 39);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.关于ToolStripMenuItem,
+            this.yzACG百科站ToolStripMenuItem});
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
+            this.帮助ToolStripMenuItem.Text = "帮助";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.关于ToolStripMenuItem.Text = "关于";
+            this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
+            // 
+            // yzACG百科站ToolStripMenuItem
+            // 
+            this.yzACG百科站ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.主站ToolStripMenuItem,
+            this.主站ToolStripMenuItem1,
+            this.何小绫ToolStripMenuItem});
+            this.yzACG百科站ToolStripMenuItem.Name = "yzACG百科站ToolStripMenuItem";
+            this.yzACG百科站ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.yzACG百科站ToolStripMenuItem.Text = "YzACG百科站";
+            // 
+            // 主站ToolStripMenuItem
+            // 
+            this.主站ToolStripMenuItem.Name = "主站ToolStripMenuItem";
+            this.主站ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.主站ToolStripMenuItem.Text = "A72的博客";
+            this.主站ToolStripMenuItem.Click += new System.EventHandler(this.主站ToolStripMenuItem_Click);
+            // 
+            // 主站ToolStripMenuItem1
+            // 
+            this.主站ToolStripMenuItem1.Name = "主站ToolStripMenuItem1";
+            this.主站ToolStripMenuItem1.Size = new System.Drawing.Size(268, 38);
+            this.主站ToolStripMenuItem1.Text = "主站";
+            this.主站ToolStripMenuItem1.Click += new System.EventHandler(this.主站ToolStripMenuItem1_Click);
+            // 
+            // 何小绫ToolStripMenuItem
+            // 
+            this.何小绫ToolStripMenuItem.Name = "何小绫ToolStripMenuItem";
+            this.何小绫ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.何小绫ToolStripMenuItem.Text = "何小绫";
+            this.何小绫ToolStripMenuItem.Click += new System.EventHandler(this.何小绫ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 322);
+            this.ClientSize = new System.Drawing.Size(781, 351);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "osu! key spy 0.2";
+            this.Text = "osu! key spy 0.2.1";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,6 +246,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yzACG百科站ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主站ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 主站ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 何小绫ToolStripMenuItem;
     }
 }
 
