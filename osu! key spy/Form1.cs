@@ -50,6 +50,13 @@ namespace Your_Name
                 pictureBox2.BackColor = Color.White;
             }
         }*/
+        public void amountChk(int amount) {
+            //检查计数器是否超标
+            if (amount > 99999999) {
+                //MessageBox.Show("你输入的数值超过了这个程序可以承受的数值了哦~");
+                counter = 0;//如果超标，清零
+            }
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (init_AB == false)
@@ -66,6 +73,7 @@ namespace Your_Name
                 label2.BackColor = Color.SkyBlue;
                 if (GetAsyncKeyState(67) != last_v67)
                 {
+                    amountChk(counter);
                     counter++;
                     label4.Text = counter.ToString();
                     last_v67 = GetAsyncKeyState(67);
@@ -85,6 +93,7 @@ namespace Your_Name
                 label3.BackColor = Color.SkyBlue;
                 if (GetAsyncKeyState(68) != last_v68)
                 {
+                    amountChk(counter);
                     counter++;
                     label4.Text = counter.ToString();
                     last_v68 = GetAsyncKeyState(68);
@@ -116,35 +125,9 @@ namespace Your_Name
         
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label4.Text = "THANKS";
-            // Thread.Sleep(1000);
-            Delay(1000);
-            label4.Text = "4 USING";
-            // Thread.Sleep(1000);
-            Delay(1000);
-            label4.Text = "THE SOF";
-            // Thread.Sleep(1000);
-            Delay(1000);
-            label4.Text = "WARE";
-            // Thread.Sleep(1000);
-            Delay(1000);
-            label4.Text = "FROM";
-            // Thread.Sleep(1000);
-            Delay(1000);
-            label4.Text = "TEAM.";
-            // Thread.Sleep(500);
-            Delay(500);
-            label4.Text = "TEAM..";
-            // Thread.Sleep(500);
-            Delay(500);
-            label4.Text = "TEAM...";
-            // Thread.Sleep(500);
-            Delay(500);
-            label4.Text = "A72";
-            // Thread.Sleep(2000);
-            Delay(2000);
-            label4.Text = counter.ToString();
+            label4.Text = "TEAM A72";
             MessageBox.Show("osu! key spy\n2017 TEAM A72\nvisit our website at https://www.yzwiki.com \nProject GitHub: https://github.com/LovelyA72/osu-key-spy \n\nHeXiaoling I love you!", "About");
+            label4.Text = counter.ToString();
         }
 
         private void 主站ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -160,6 +143,38 @@ namespace Your_Name
         private void 何小绫ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.yzwiki.com/item/%E4%BD%95%E5%B0%8F%E7%BB%AB");
+        }
+
+        private void 项目Github页ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/LovelyA72/osu-key-spy");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") {
+                MessageBox.Show("你什么也没输入欸？");
+                return;
+            }
+            int inputlenth = 0;
+            string cache = "";
+            cache = textBox1.Text;
+            inputlenth = cache.Length;
+            for (int i = 0;i<inputlenth;i++) {
+                if (cache[i] >= '0'&& cache[i] <= '9')
+                {
+                }
+                else {
+                    MessageBox.Show("不要输入奇怪的东西哦！");
+                    return;
+                }
+            }
+            if (Convert.ToInt32(cache) >= 99999999) {
+                MessageBox.Show("你输入的数值超过了这个程序可以承受的数值了哦~");
+                return;
+            }
+            counter = Convert.ToInt32(cache);
+            label4.Text = counter.ToString();
         }
     }
     }

@@ -49,12 +49,17 @@
             this.yzACG百科站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.主站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.主站ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.项目Github页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.何小绫ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -117,7 +122,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(147, 218);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 118);
+            this.panel1.Size = new System.Drawing.Size(691, 118);
             this.panel1.TabIndex = 6;
             // 
             // label4
@@ -126,7 +131,7 @@
             this.label4.ForeColor = System.Drawing.Color.LightGreen;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(614, 118);
+            this.label4.Size = new System.Drawing.Size(688, 118);
             this.label4.TabIndex = 0;
             this.label4.Text = "0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -157,7 +162,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(781, 39);
+            this.menuStrip1.Size = new System.Drawing.Size(871, 39);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -167,7 +172,7 @@
             this.关于ToolStripMenuItem,
             this.yzACG百科站ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(74, 35);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 关于ToolStripMenuItem
@@ -182,6 +187,7 @@
             this.yzACG百科站ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.主站ToolStripMenuItem,
             this.主站ToolStripMenuItem1,
+            this.项目Github页ToolStripMenuItem,
             this.何小绫ToolStripMenuItem});
             this.yzACG百科站ToolStripMenuItem.Name = "yzACG百科站ToolStripMenuItem";
             this.yzACG百科站ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
@@ -190,29 +196,65 @@
             // 主站ToolStripMenuItem
             // 
             this.主站ToolStripMenuItem.Name = "主站ToolStripMenuItem";
-            this.主站ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.主站ToolStripMenuItem.Size = new System.Drawing.Size(262, 38);
             this.主站ToolStripMenuItem.Text = "A72的博客";
             this.主站ToolStripMenuItem.Click += new System.EventHandler(this.主站ToolStripMenuItem_Click);
             // 
             // 主站ToolStripMenuItem1
             // 
             this.主站ToolStripMenuItem1.Name = "主站ToolStripMenuItem1";
-            this.主站ToolStripMenuItem1.Size = new System.Drawing.Size(268, 38);
+            this.主站ToolStripMenuItem1.Size = new System.Drawing.Size(262, 38);
             this.主站ToolStripMenuItem1.Text = "主站";
             this.主站ToolStripMenuItem1.Click += new System.EventHandler(this.主站ToolStripMenuItem1_Click);
+            // 
+            // 项目Github页ToolStripMenuItem
+            // 
+            this.项目Github页ToolStripMenuItem.Name = "项目Github页ToolStripMenuItem";
+            this.项目Github页ToolStripMenuItem.Size = new System.Drawing.Size(262, 38);
+            this.项目Github页ToolStripMenuItem.Text = "项目Github页";
+            this.项目Github页ToolStripMenuItem.Click += new System.EventHandler(this.项目Github页ToolStripMenuItem_Click);
             // 
             // 何小绫ToolStripMenuItem
             // 
             this.何小绫ToolStripMenuItem.Name = "何小绫ToolStripMenuItem";
-            this.何小绫ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.何小绫ToolStripMenuItem.Size = new System.Drawing.Size(262, 38);
             this.何小绫ToolStripMenuItem.Text = "何小绫";
             this.何小绫ToolStripMenuItem.Click += new System.EventHandler(this.何小绫ToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(212, 35);
+            this.textBox1.TabIndex = 10;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Location = new System.Drawing.Point(475, 61);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(362, 136);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "操作";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(239, 46);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 54);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "设定值";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 351);
+            this.ClientSize = new System.Drawing.Size(871, 351);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -222,7 +264,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "osu! key spy 0.2.1";
+            this.Text = "osu! key spy 0.2.2";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -231,6 +273,8 @@
             this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +298,10 @@
         private System.Windows.Forms.ToolStripMenuItem 主站ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 主站ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 何小绫ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 项目Github页ToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button2;
     }
 }
 
