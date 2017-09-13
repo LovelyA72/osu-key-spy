@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
+
 
 namespace Your_Name
 {
@@ -175,6 +177,23 @@ namespace Your_Name
             }
             counter = Convert.ToInt32(cache);
             label4.Text = counter.ToString();
+        }
+
+        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string path = "Save.rvdata";
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Error:801 Save.rvdata - No such file or directory");
+            }
+            else if (File.Exists(path)) { 
+                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Write);
+                fs.SetLength(0);
+                fs.Close();
+                StreamWriter sw = new StreamWriter(path, true);
+                sw.WriteLine(counter);
+                sw.Close();
+            }
         }
     }
     }
