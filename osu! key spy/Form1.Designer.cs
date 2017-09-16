@@ -44,6 +44,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.存档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.成就ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yzACG百科站ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,15 +57,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.存档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.成就ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -166,9 +168,32 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(871, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(871, 39);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 存档ToolStripMenuItem
+            // 
+            this.存档ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.保存ToolStripMenuItem,
+            this.成就ToolStripMenuItem});
+            this.存档ToolStripMenuItem.Name = "存档ToolStripMenuItem";
+            this.存档ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
+            this.存档ToolStripMenuItem.Text = "存档";
+            // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
+            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            // 
+            // 成就ToolStripMenuItem
+            // 
+            this.成就ToolStripMenuItem.Name = "成就ToolStripMenuItem";
+            this.成就ToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
+            this.成就ToolStripMenuItem.Text = "成就";
+            this.成就ToolStripMenuItem.Click += new System.EventHandler(this.成就ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -182,7 +207,7 @@
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(261, 38);
             this.关于ToolStripMenuItem.Text = "关于";
             this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
@@ -194,7 +219,7 @@
             this.项目Github页ToolStripMenuItem,
             this.何小绫ToolStripMenuItem});
             this.yzACG百科站ToolStripMenuItem.Name = "yzACG百科站ToolStripMenuItem";
-            this.yzACG百科站ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.yzACG百科站ToolStripMenuItem.Size = new System.Drawing.Size(261, 38);
             this.yzACG百科站ToolStripMenuItem.Text = "YzACG百科站";
             // 
             // 主站ToolStripMenuItem
@@ -253,28 +278,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // 存档ToolStripMenuItem
-            // 
-            this.存档ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.保存ToolStripMenuItem,
-            this.成就ToolStripMenuItem});
-            this.存档ToolStripMenuItem.Name = "存档ToolStripMenuItem";
-            this.存档ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
-            this.存档ToolStripMenuItem.Text = "存档";
-            // 
-            // 保存ToolStripMenuItem
-            // 
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
-            this.保存ToolStripMenuItem.Text = "保存";
-            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
-            // 
-            // 成就ToolStripMenuItem
-            // 
-            this.成就ToolStripMenuItem.Name = "成就ToolStripMenuItem";
-            this.成就ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
-            this.成就ToolStripMenuItem.Text = "成就";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -290,8 +293,10 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "osu! key spy 0.2.2";
+            this.Text = "osu! key spy 0.2.3";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -301,6 +306,7 @@
             this.menuStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +337,7 @@
         private System.Windows.Forms.ToolStripMenuItem 存档ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 成就ToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
 

@@ -9,7 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
-
+using osu_key_spy;
 
 namespace Your_Name
 {
@@ -179,14 +179,20 @@ namespace Your_Name
             label4.Text = counter.ToString();
         }
 
+
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string path = "Save.rvdata";
+            //点击时保存存档
+            save();
+        }
+        public void save(string path = "Save.rvdata") {
             if (!File.Exists(path))
-            {
+            {//若没有文件，报错
                 MessageBox.Show("Error:801 Save.rvdata - No such file or directory");
             }
-            else if (File.Exists(path)) { 
+            else
+            {
+                //保存存档
                 FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Write);
                 fs.SetLength(0);
                 fs.Close();
@@ -195,5 +201,36 @@ namespace Your_Name
                 sw.Close();
             }
         }
+        private void 成就ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //实例化窗体2并弹出
+            Form2 chengjiu = new Form2();
+            chengjiu.Show();
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            //启动自检
+            if (!File.Exists("tick.png")) {//检查图片资源是否存在，如果不存在，报错并退出
+                MessageBox.Show("tick.png: No such file or directory.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
+            if (!File.Exists("Save.rvdata")){ //检查存档文件，不存在就新建一个文本文件并写入0
+                StreamWriter sw;
+                sw = File.CreateText("Save.rvdata");
+                sw.Write("0");
+                sw.Close();
+            }
+            //检查完成，导入存档
+            string text = System.IO.File.ReadAllText("Save.rvdata");
+            counter = Convert.ToInt32(text);
+            label4.Text = counter.ToString();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //退出时保存存档
+            save();
+        }
     }
-    }
+}
