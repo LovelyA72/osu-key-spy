@@ -1,6 +1,6 @@
 ﻿namespace osu_key_spy
 {
-    partial class Form2
+    partial class Achievements
     {
         /// <summary>
         /// Required designer variable.
@@ -94,8 +94,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(246, 86);
             this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
+            this.button4.Text = "200000!";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -103,8 +104,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(246, 86);
             this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
+            this.button5.Text = "500000!";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -112,8 +114,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(246, 86);
             this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
+            this.button6.Text = "1000000!!";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox1
             // 
@@ -166,7 +169,7 @@
             this.pictureBox6.TabIndex = 12;
             this.pictureBox6.TabStop = false;
             // 
-            // Form2
+            // Achievements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,7 +191,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form2";
+            this.Name = "Achievements";
             this.Text = "成就";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form2_Load);

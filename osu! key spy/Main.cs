@@ -10,12 +10,16 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
 using osu_key_spy;
+using IniParser;
+using IniParser.Model;
 
 namespace Your_Name
 {
 
     public partial class Form1 : Form
     {
+        int keyA = 67;
+        int keyB = 68;
         //public int countercache = 0;
         public Form1()
         {
@@ -63,22 +67,22 @@ namespace Your_Name
         {
             if (init_AB == false)
             {
-                last_v67 = GetAsyncKeyState(67);
-                last_v68 = GetAsyncKeyState(68);
+                last_v67 = GetAsyncKeyState(keyA);
+                last_v68 = GetAsyncKeyState(keyB);
                 init_AB = true;
             }
           
 
-            if (GetAsyncKeyState(67) != 0)
+            if (GetAsyncKeyState(keyA) != 0)
             {
                 pictureBox1.BackColor = Color.SkyBlue;
                 label2.BackColor = Color.SkyBlue;
-                if (GetAsyncKeyState(67) != last_v67)
+                if (GetAsyncKeyState(keyA) != last_v67)
                 {
                     amountChk(counter);
                     counter++;
                     label4.Text = counter.ToString();
-                    last_v67 = GetAsyncKeyState(67);
+                    last_v67 = GetAsyncKeyState(keyA);
                 }
 
 
@@ -87,18 +91,18 @@ namespace Your_Name
             {
                 pictureBox1.BackColor = Color.White;
                 label2.BackColor = Color.White;
-                last_v67 = GetAsyncKeyState(67);
+                last_v67 = GetAsyncKeyState(keyA);
             }
-            if (GetAsyncKeyState(68) != 0)
+            if (GetAsyncKeyState(keyB) != 0)
             {
                 pictureBox2.BackColor = Color.SkyBlue;
                 label3.BackColor = Color.SkyBlue;
-                if (GetAsyncKeyState(68) != last_v68)
+                if (GetAsyncKeyState(keyB) != last_v68)
                 {
                     amountChk(counter);
                     counter++;
                     label4.Text = counter.ToString();
-                    last_v68 = GetAsyncKeyState(68);
+                    last_v68 = GetAsyncKeyState(keyB);
                 }
 
             }
@@ -204,7 +208,7 @@ namespace Your_Name
         private void 成就ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //实例化窗体2并弹出
-            Form2 chengjiu = new Form2();
+            Achievements chengjiu = new Achievements();
             chengjiu.Show();
         }
 
@@ -221,16 +225,42 @@ namespace Your_Name
                 sw.Write("0");
                 sw.Close();
             }
+            if (!File.Exists("config.ini"))
+            { //检查配置文件，不存在就新建一个文本文件并写入CD配置
+                StreamWriter sw;
+                sw = File.CreateText("config.ini");
+                //sw.Write("0");
+                sw.Close();
+                var settings = new FileIniDataParser();
+                IniData dataA = settings.ReadFile("config.ini");
+                dataA["osu-key-spy"]["keyset"] = "CD";
+                settings.WriteFile("config.ini", dataA);
+            }
             //检查完成，导入存档
             string text = System.IO.File.ReadAllText("Save.rvdata");
             counter = Convert.ToInt32(text);
             label4.Text = counter.ToString();
+            //读取配置
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile("config.ini");
+            String keyset = data["osu-key-spy"]["keyset"];
+            if (keyset == "ZX"||keyset=="zx") {
+                keyA = 90;
+                keyB = 88;
+                label2.Text = "Z";
+                label3.Text = "X";
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             //退出时保存存档
             save();
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.ExitThread();
         }
     }
 }
