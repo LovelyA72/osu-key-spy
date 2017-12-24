@@ -34,6 +34,18 @@ namespace osu_key_spy
             {
                 pictureBox5.Image = Image.FromFile("tick.png");
             }
+            if (score >= 200000)
+            {
+                pictureBox2.Image = Image.FromFile("tick.png");
+            }
+            if (score >= 500000)
+            {
+                pictureBox4.Image = Image.FromFile("tick.png");
+            }
+            if (score >= 1000000)
+            {
+                pictureBox6.Image = Image.FromFile("tick.png");
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {

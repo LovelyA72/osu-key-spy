@@ -239,6 +239,12 @@ namespace Your_Name
             //检查完成，导入存档
             string text = System.IO.File.ReadAllText("Save.rvdata");
             counter = Convert.ToInt32(text);
+            if (counter >= 99999999)
+            {
+                MessageBox.Show("存档数值过大，自动清零");
+                counter = 0;//清零计数器
+                return;
+            }
             label4.Text = counter.ToString();
             //读取配置
             var parser = new FileIniDataParser();
