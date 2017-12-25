@@ -60,6 +60,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.选项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.使用ZX按键ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -167,10 +169,11 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.存档ToolStripMenuItem,
+            this.选项ToolStripMenuItem,
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(871, 39);
+            this.menuStrip1.Size = new System.Drawing.Size(871, 42);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,7 +185,7 @@
             this.toolStripSeparator1,
             this.退出ToolStripMenuItem});
             this.存档ToolStripMenuItem.Name = "存档ToolStripMenuItem";
-            this.存档ToolStripMenuItem.Size = new System.Drawing.Size(74, 35);
+            this.存档ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
             this.存档ToolStripMenuItem.Text = "存档";
             // 
             // 保存ToolStripMenuItem
@@ -218,7 +221,7 @@
             this.关于ToolStripMenuItem,
             this.yzACG百科站ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(74, 35);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 关于ToolStripMenuItem
@@ -295,6 +298,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // 选项ToolStripMenuItem
+            // 
+            this.选项ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.使用ZX按键ToolStripMenuItem});
+            this.选项ToolStripMenuItem.Name = "选项ToolStripMenuItem";
+            this.选项ToolStripMenuItem.Size = new System.Drawing.Size(74, 38);
+            this.选项ToolStripMenuItem.Text = "选项";
+            this.选项ToolStripMenuItem.Click += new System.EventHandler(this.选项ToolStripMenuItem_Click);
+            // 
+            // 使用ZX按键ToolStripMenuItem
+            // 
+            this.使用ZX按键ToolStripMenuItem.CheckOnClick = true;
+            this.使用ZX按键ToolStripMenuItem.Name = "使用ZX按键ToolStripMenuItem";
+            this.使用ZX按键ToolStripMenuItem.Size = new System.Drawing.Size(268, 38);
+            this.使用ZX按键ToolStripMenuItem.Text = "使用ZX按键";
+            this.使用ZX按键ToolStripMenuItem.Click += new System.EventHandler(this.使用ZX按键ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -357,6 +377,8 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 选项ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 使用ZX按键ToolStripMenuItem;
     }
 }
 

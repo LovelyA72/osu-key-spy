@@ -131,9 +131,8 @@ namespace Your_Name
         
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label4.Text = "TEAM A72";
-            MessageBox.Show("osu! key spy\n2017 TEAM A72\nvisit our website at https://www.yzwiki.com \nProject GitHub: https://github.com/LovelyA72/osu-key-spy \n\nHeXiaoling I love you!", "About");
-            label4.Text = counter.ToString();
+            About about = new About();
+            about.Show();
         }
 
         private void 主站ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -255,6 +254,7 @@ namespace Your_Name
                 keyB = 88;
                 label2.Text = "Z";
                 label3.Text = "X";
+                使用ZX按键ToolStripMenuItem.Checked = true;
             }
         }
 
@@ -267,6 +267,36 @@ namespace Your_Name
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.ExitThread();
+        }
+
+        private void 使用ZX按键ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (使用ZX按键ToolStripMenuItem.Checked)
+            {
+                keyA = 90;
+                keyB = 88;
+                label2.Text = "Z";
+                label3.Text = "X";
+                var settings = new FileIniDataParser();
+                IniData dataA = settings.ReadFile("config.ini");
+                dataA["osu-key-spy"]["keyset"] = "ZX";
+                settings.WriteFile("config.ini", dataA);
+            }
+            else {
+                keyA = 67;
+                keyB = 68;
+                label2.Text = "C";
+                label3.Text = "D";
+                var settings = new FileIniDataParser();
+                IniData dataA = settings.ReadFile("config.ini");
+                dataA["osu-key-spy"]["keyset"] = "CD";
+                settings.WriteFile("config.ini", dataA);
+            }
+        }
+
+        private void 选项ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
